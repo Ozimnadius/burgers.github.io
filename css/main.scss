@@ -1,0 +1,49 @@
+//variables
+//fonts
+$font: 'Ubuntu', Arial, sans-serif;
+
+//colors
+$orange3: #c1401e;
+$bg: #ffffff;
+$black3: #000000;
+$gray3: #c0c8cb;
+$gray4: #b0bec5;
+$black: #141414;
+$orange2: #e35028;
+$white2: #d1cfcb;
+$orange: #e45028;
+$light-brown: #c0afaa;
+$gray2: #626262;
+$gray: #b5babd;
+$black2: #1f2122;
+$yellow: #f9b43b;
+$text: #2f3234;
+$black-gray: #3e3e3e;
+$white3: #cfd8dc;
+$white4: #f5f2ed;
+
+//another
+$font-size: 14px;
+
+//layout
+/*-----------------SECTION-MIXINS--------------------*/
+@import "layout/_mixins";
+/*------------------------SECTION-FONTS----------------*/
+@import "layout/_fonts";
+/*------------------------SECTION-ADJUSTMENT----------------*/
+@import "layout/_adjustment";
+/*------------------------SECTION-COMMON----------------*/
+@import "layout/_common";
+
+//sections
+/*------------------------SECTION-HEADER----------------*/
+@import "sections/_header";
+/*------------------------SECTION-FOOTER---------------------*/
+@import "sections/_footer";
+
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}
