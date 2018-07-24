@@ -26,6 +26,8 @@ $white4: #f5f2ed;
 $font-size: 14px;
 
 //layout
+/*-----------------SECTION-VENDOR--------------------*/
+@import "layout/_vendor";
 /*-----------------SECTION-MIXINS--------------------*/
 @import "layout/_mixins";
 /*------------------------SECTION-FONTS----------------*/
@@ -40,10 +42,3 @@ $font-size: 14px;
 @import "sections/_header";
 /*------------------------SECTION-FOOTER---------------------*/
 @import "sections/_footer";
-
-
-.debug {
-  //@include debug(rgba(0,0,0,0.3), 1px solid red);
-  //z-index: 100;
-  //top: 0;
-}
