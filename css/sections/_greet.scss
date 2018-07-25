@@ -1,4 +1,43 @@
 .greet {
   background: url("/images/bg/bg-about.jpg") 0 0 no-repeat;
   background-size: cover;
+  position: relative;
+
+  .container {
+    height: 100%;
+  }
+  .row {
+    height: 100%;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    padding-right: 20px;
+    padding-bottom: 60px;
+  }
+
+  &__svg {
+    width: 451px;
+    height: 241px;
+    position: absolute;
+    top: 70px;
+    left: -30px;
+  }
+  &__pic {
+    width: 417px;
+  }
+
+  &__next {
+    position: absolute;
+    z-index: 10;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -15px;
+
+    &-svg {
+      width: 29px;
+      height: 14px;
+    }
+  }
 }
