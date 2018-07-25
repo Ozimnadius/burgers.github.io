@@ -42,6 +42,17 @@ body {
 section {
   height: 100vh;
   min-height: 650px;
+
+  background-size: cover;
+
+  .container {
+    height: 100%;
+  }
+  .row {
+    height: 100%;
+    align-items: center;
+    align-content: center;
+  }
 }
 
 .row {
@@ -60,6 +71,11 @@ ul {
   li {
     list-style: none;
   }
+}
+
+button {
+  border: none;
+  outline: none;
 }
 
 a {

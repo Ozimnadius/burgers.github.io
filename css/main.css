@@ -535,6 +535,20 @@ body {
 section {
   height: 100vh;
   min-height: 650px;
+  background-size: cover;
+}
+
+section .container {
+  height: 100%;
+}
+
+section .row {
+  height: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 
 .row {
@@ -558,12 +572,26 @@ ul li {
   list-style: none;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
 /*------------------------SECTION-COMMON----------------*/
+.proportion {
+  display: block;
+  width: 100%;
+}
+
+.proportion_275x325 {
+  padding-top: calc((325 / 275) * 100%);
+}
+
 .button {
   background-color: #e45028;
   color: #ffffff;
@@ -628,8 +656,10 @@ a {
 }
 
 .pagination {
-  position: absolute;
-  left: calc(100% + 5px);
+  position: fixed;
+  z-index: 100;
+  right: 50px;
+  top: 90px;
   top: 90px;
 }
 
@@ -674,7 +704,10 @@ a {
   font-family: Gagalin;
   font-size: 72px;
   font-weight: 400;
-  margin-bottom: 23px;
+}
+
+.title_black {
+  color: #2f3234;
 }
 
 .subtitle {
@@ -688,8 +721,8 @@ a {
 
 /*------------------------SECTION-HEADER----------------*/
 .header {
-  position: absolute;
-  z-index: 20;
+  position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -713,20 +746,9 @@ a {
 
 /*-----------------SECTION-GREET--------------------*/
 .greet {
-  background: url("/images/bg/bg-about.jpg") 0 0 no-repeat;
+  background: url("../images/bg/bg-greet.jpg") 0 0 no-repeat;
   background-size: cover;
   position: relative;
-}
-
-.greet .container {
-  height: 100%;
-}
-
-.greet .row {
-  height: 100%;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .greet__img {
@@ -747,6 +769,10 @@ a {
   width: 417px;
 }
 
+.greet__title {
+  margin-bottom: 23px;
+}
+
 .greet__next {
   position: absolute;
   z-index: 10;
@@ -758,6 +784,137 @@ a {
 .greet__next-svg {
   width: 29px;
   height: 14px;
+}
+
+/*-----------------SECTION-BEST--------------------*/
+.best {
+  background: url("../images/bg/bg-best.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.best__title {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.best__list {
+  width: 100%;
+  margin-left: -10px;
+  margin-right: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.best__item {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: calc((100%/3) - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.best__item-svg {
+  margin-bottom: 30px;
+}
+
+.best__item-title {
+  font-family: Lifehack;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.best__item-desc {
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/*-----------------SECTION-REVIEWS--------------------*/
+.reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.review {
+  width: 25%;
+  background: #b5babd;
+  position: relative;
+}
+
+.review:hover .review__hidden {
+  opacity: 1;
+}
+
+.review__hidden {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(20, 20, 20, 0.7);
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.review__title {
+  color: #ffffff;
+  font-family: Gagalin;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28.11px;
+  margin-bottom: 20px;
+}
+
+.review__desc {
+  color: #ffffff;
+  line-height: 1.71;
+  margin-bottom: 15px;
+}
+
+.review__button {
+  background-color: #2f3234;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 /*------------------------SECTION-FOOTER---------------------*/

@@ -1,3 +1,11 @@
+.proportion {
+  display: block;
+  width: 100%;
+  &_275x325 {
+    padding-top: calc((325 / 275) * 100%);
+  }
+}
+
 .button {
   background-color: $orange;
 
@@ -59,8 +67,10 @@
 }
 
 .pagination {
-  position: absolute;
-  left: calc(100% + 5px);
+  position: fixed;
+  z-index: 100;
+  right: 50px;
+  top: 90px;
   top: 90px;
 
   &__item {
@@ -98,7 +108,10 @@
   font-family: Gagalin;
   font-size: 72px;
   font-weight: 400;
-  margin-bottom: 23px;
+
+  &_black {
+    color: $text;
+  }
 }
 .subtitle {
   color: $bg;
