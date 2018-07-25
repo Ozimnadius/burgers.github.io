@@ -858,6 +858,7 @@ a {
 
 .review {
   width: 25%;
+  height: 50%;
   background: #b5babd;
   position: relative;
 }
