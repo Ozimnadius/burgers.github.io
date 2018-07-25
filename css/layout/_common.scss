@@ -1,3 +1,59 @@
 .button {
+  background-color: $orange;
 
+  color: $bg;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: .3s;
+
+  &:hover {
+    background-color: $orange3;
+  }
+
+}
+
+.logo {
+  &__svg {
+    width: 92px;
+    height: 69px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    color: $bg;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 21px;
+    position: relative;
+    margin-right: 15px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $bg;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -2px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
