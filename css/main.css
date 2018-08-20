@@ -746,7 +746,7 @@ a {
 
 /*-----------------SECTION-GREET--------------------*/
 .greet {
-  background: url("../images/bg/bg-greet.jpg") 0 0 no-repeat;
+  background: url("../images/bg/bg-greet.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -789,7 +789,7 @@ a {
 
 /*-----------------SECTION-BEST--------------------*/
 .best {
-  background: url("../images/bg/bg-best.jpg") 0 0 no-repeat;
+  background: url("../images/bg/bg-best.jpg") center center no-repeat;
   background-size: cover;
 }
 
