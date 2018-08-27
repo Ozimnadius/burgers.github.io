@@ -1,0 +1,110 @@
+.team {
+  background: url("../images/bg/bg-team.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__right {
+    position: absolute;
+    right: 0;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($text, .93);
+    padding: 0 95px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      .team__name {
+        color: $yellow;
+        &:before {
+          transform: rotate(-180deg);
+        }
+      }
+      .team__hidden {
+        //height: auto;
+        //display: block;
+      }
+    }
+  }
+
+  &__name {
+    color: $bg;
+    font-family: Gagalin;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: color .3s;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      margin-right: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 4.5px 0 4.5px;
+      border-color: #f9b33b transparent transparent transparent;
+      transition:.3s;
+    }
+  }
+
+  &__hidden {
+    //display: none;
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__img {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__pic {
+    max-width: initial;
+    max-height: 100%;
+  }
+
+  &__content {
+    color: $bg;
+    font-size: 14px;
+  }
+
+  &__prof {
+    font-weight: 700;
+    margin-bottom: 17px;
+  }
+
+  &__desc {
+    line-height: 1.71;
+  }
+}

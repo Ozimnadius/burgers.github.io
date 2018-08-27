@@ -6,17 +6,22 @@
 .review {
   width: 25%;
   height: 50%;
-  background: $gray;
+  //background: $gray;
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &:hover {
     .review__hidden {
       opacity: 1;
+      visibility: visible;
     }
   }
 
   &__hidden {
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     background-color: rgba($black, .7);
     z-index: 10;
