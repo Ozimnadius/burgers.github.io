@@ -1,0 +1,85 @@
+.menu {
+  background: url("../images/bg/bg-menu.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 95px;
+
+}
+
+.haccor {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  &__list {
+    display: flex;
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+
+    &.active {
+      .haccor__wrapper {
+        width: 541px;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 0;
+    overflow: hidden;
+    transition: .5s;
+    background-color: rgba($text, .93);
+  }
+  &__desc {
+    width: 541px;
+    padding: 60px 35px;
+    color: $bg;
+    font-size: 14px;
+    line-height: 1.71;
+
+  }
+
+  &__title {
+    width: 80px;
+    color: $bg;
+    font-family: Gagalin;
+    font-size: 40px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(20, 20, 20, 0.7);
+    }
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &-wrapper {
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      transform-origin: top left;
+      line-height: 80px;
+      position: absolute;
+      z-index: 20;
+      bottom: -40px;
+      left: 0;
+    }
+  }
+}
