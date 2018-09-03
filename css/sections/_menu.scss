@@ -39,7 +39,7 @@
     width: 541px;
     padding: 60px 35px;
     color: $bg;
-    font-size: 14px;
+    font-size: rem(14px);
     line-height: 1.71;
 
   }
@@ -48,7 +48,7 @@
     width: 80px;
     color: $bg;
     font-family: Gagalin;
-    font-size: 40px;
+    font-size: rem(40px);
     height: 100%;
     display: flex;
     align-items: flex-end;

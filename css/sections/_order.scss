@@ -41,7 +41,7 @@
     flex-direction: column;
 
     color: $bg;
-    font-size: 14px;
+    font-size: rem(14px);
   }
 
   &__input {
@@ -83,7 +83,7 @@
 
     &-label {
       color: $bg;
-      font-size: 14px;
+      font-size: rem(14px);
       display: flex;
       align-items: center;
       cursor: pointer;
@@ -125,7 +125,7 @@
       display: flex;
       align-items: center;
       color: $bg;
-      font-size: 14px;
+      font-size: rem(14px);
       cursor: pointer;
     }
     &-input {
@@ -168,7 +168,7 @@
   }
   &__reset {
     color: $bg;
-    font-size: 14px;
+    font-size: rem(14px);
   }
 
 }

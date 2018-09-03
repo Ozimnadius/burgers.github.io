@@ -47,7 +47,7 @@
   &__name {
     color: $bg;
     font-family: Gagalin;
-    font-size: 14px;
+    font-size: rem(14px);
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -96,7 +96,7 @@
 
   &__content {
     color: $bg;
-    font-size: 14px;
+    font-size: rem(14px);
   }
 
   &__prof {
