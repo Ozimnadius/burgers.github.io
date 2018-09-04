@@ -3,6 +3,13 @@ html {
   height: 100%;
   font-size: $font-size;
   box-sizing: border-box;
+
+  @include sm{
+    font-size: 13px;
+  };
+  @include xs {
+    font-size: 12px;
+  };
 }
 
 *, *:before, *:after {
@@ -37,11 +44,17 @@ body {
   padding: 0 10px;
   width: 100%;
   margin: 0 auto;
+
+  @include sm{
+    padding: 0 20px;
+  };
+  @include xs{
+    padding: 0 10px;
+  };
 }
 
 section {
   height: 100vh;
-  min-height: 650px;
 
   background-size: cover;
 

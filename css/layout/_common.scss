@@ -43,6 +43,10 @@
   display: flex;
   align-items: center;
 
+  @include sm{
+    display: none;
+  };
+
   &__item {
     color: $bg;
     font-size: rem(13px);
@@ -51,6 +55,7 @@
     padding-right: 21px;
     position: relative;
     margin-right: 15px;
+
 
     &:after {
       content: '';
@@ -72,6 +77,14 @@
         display: none;
       }
     }
+
+    @include md{
+      padding-right: 0;
+      margin-right: 10px;
+      &:after {
+        display: none;
+      }
+    };
   }
 }
 
@@ -127,6 +140,10 @@
   &_left {
     text-align: left;
   }
+
+  @include xs{
+    font-size: rem(60px);
+  };
 }
 .subtitle {
   color: $bg;
@@ -135,4 +152,28 @@
   font-weight: 500;
   letter-spacing: -1.63px;
   line-height: 60px;
+  @include xs{
+    font-size: rem(45px);
+  };
+}
+
+.menu-button {
+  margin-left: 30px;
+  display: none;
+
+  @include sm{
+    display: block;
+  };
+
+  &__line {
+    width: 24px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: $bg;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

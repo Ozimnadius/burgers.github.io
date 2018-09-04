@@ -60,3 +60,21 @@
     font-size: 0.75rem;
   }
 }
+
+@mixin md () {
+  @media screen and (max-width: $break_md){
+    @content;
+  }
+}
+
+@mixin sm () {
+  @media screen and (max-width: $break_sm){
+    @content;
+  }
+}
+
+@mixin xs () {
+  @media screen and (max-width: $break_xs){
+    @content;
+  }
+}

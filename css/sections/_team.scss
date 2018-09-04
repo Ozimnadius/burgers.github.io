@@ -15,6 +15,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include sm{
+      left: 0;
+    };
+    @include  xs{
+      padding: 0 5%;
+    };
   }
 
   &__title {
@@ -64,6 +71,10 @@
       border-color: #f9b33b transparent transparent transparent;
       transition:.3s;
     }
+
+    @include sm{
+      justify-content: center;
+    };
   }
 
   &__hidden {
@@ -75,6 +86,8 @@
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__img {
@@ -87,6 +100,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include sm{
+      margin-right: 0;
+      margin-bottom: 20px;
+    };
   }
 
   &__pic {
@@ -97,6 +115,10 @@
   &__content {
     color: $bg;
     font-size: rem(14px);
+
+    @include sm{
+      text-align: center;
+    };
   }
 
   &__prof {

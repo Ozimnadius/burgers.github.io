@@ -3,11 +3,27 @@
   background-size: cover;
   position: relative;
 
+  .row {
+    flex-wrap: nowrap;
+    @include sm{
+      flex-wrap: wrap;
+    };
+  }
+
   &__img {
     position: relative;
     padding-right: 20px;
     padding-bottom: 60px;
     padding-left: 50px;
+
+    @include sm{
+      padding: 0;
+      margin: 0 auto;
+      margin-bottom: 40px;
+    };
+    @include xs{
+      margin-bottom: 10px;
+    };
   }
   &__svg {
     width: 451px;
@@ -20,8 +36,17 @@
     width: 417px;
   }
 
+  &__content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
   &__title {
     margin-bottom: 23px;
+    @include xs {
+      margin-bottom: 10px;
+    };
   }
 
   &__next {

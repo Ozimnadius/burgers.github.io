@@ -6,19 +6,34 @@
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
+
+    @include xs{
+      margin-bottom: 10px;
+      font-size: 32px;
+    };
   }
 
   &__form {
     //width: 100%;
     display: flex;
+    flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
+    @include sm{
+      padding: 0 17%;
+    };
+    @include xs{
+      padding: 0;
+    };
   }
 
   &__col {
     margin-left: 10px;
     margin-right: 10px;
     width: calc(50% - 20px);
+    @include sm {
+      width: calc(100% - 20px);
+    };
   }
 
   &__block {
@@ -67,6 +82,9 @@
     width: 100%;
     margin-left: 10px;
     margin-right: 10px;
+    @include xs{
+      justify-content: center;
+    };
   }
 
   &__switches {
@@ -127,6 +145,9 @@
       color: $bg;
       font-size: rem(14px);
       cursor: pointer;
+      @include xs{
+        justify-content: center;
+      };
     }
     &-input {
       display: none;
