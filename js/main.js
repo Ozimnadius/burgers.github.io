@@ -18,4 +18,16 @@ $(function () {
 
 
     });
+
+    const hamOpen = document.querySelector('.menu-button ');
+    const hamClose = document.querySelector('.ham__close');
+    const ham = document.querySelector('.ham');
+
+    hamOpen.addEventListener('click', function (e) {
+        ham.classList.add('open');
+    });
+
+    hamClose.addEventListener('click', function (e) {
+        ham.classList.remove('open');
+    })
 });

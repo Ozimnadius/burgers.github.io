@@ -160,6 +160,7 @@
 .menu-button {
   margin-left: 30px;
   display: none;
+  cursor: pointer;
 
   @include sm{
     display: block;

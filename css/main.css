@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-----------------SECTION-VENDOR--------------------*/
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -797,6 +798,7 @@ img {
 .menu-button {
   margin-left: 30px;
   display: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -1660,6 +1662,102 @@ img {
 .map {
   background: url("../images/bg/map.jpg") center center no-repeat;
   background-size: cover;
+}
+
+/*-----------------SECTION-HAMBURGER--------------------*/
+.ham {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2f3234;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.ham.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ham__logo {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+}
+
+.ham__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.ham__close-svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.ham__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ham__item {
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .ham__item {
+    margin-bottom: 0;
+  }
+}
+
+.ham__item:last-child {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .ham__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ham__item:last-child:after {
+  display: none;
+}
+
+.ham__item:after {
+  content: '•';
+  margin-top: 15px;
 }
 
 /*------------------------SECTION-FOOTER---------------------*/
