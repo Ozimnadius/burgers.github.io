@@ -1,0 +1,291 @@
+.burgers {
+  background-color: $yellow;
+  background-image: linear-gradient(to top, $yellow 0%, #eb8c38 48%, $yellow 74%, $yellow 100%);
+
+  .row {
+    position: relative;
+    flex-wrap: nowrap;
+  }
+
+  &__left {
+    position: absolute;
+    height: 100%;
+    right: calc(100% + 20px);
+    display: flex;
+    align-items: center;
+    @include md{
+      right: initial;
+      left: 0;
+    };
+    @include xs{
+      left: -10px;
+    };
+
+  }
+  &__prev {
+    transform: rotate(90deg);
+  }
+
+  &__slider {
+    display: flex;
+  }
+
+  &__right {
+    position: absolute;
+    height: 100%;
+    left: calc(100% + 20px);
+    display: flex;
+    align-items: center;
+    @include md{
+      left: initial;
+      right: 0;
+    };
+    @include xs{
+      right: -10px;
+    };
+  }
+  &__next {
+    transform: rotate(-90deg);
+  }
+
+  &__svg {
+    width: 27px;
+    height:13px;
+  }
+}
+
+.burger {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include md{
+    flex-direction: column;
+    align-items: center;
+  };
+
+  &__left {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include md{
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 20px;
+      padding-top: 80px;
+    };
+    @include xs{
+      padding-top: 40px;
+      margin-bottom: 10px;
+    };
+
+  }
+  &__img {
+    padding: 0 30px;
+
+  }
+  &__pic {
+    max-height: 100%;
+  }
+
+  &__right {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    @include md{
+      width: 100%;
+      margin-left: 0;
+      padding: 0 40px;
+    };
+    @include xs{
+      padding: 0;
+    };
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    line-height: 63.93px;
+    @include md{
+      text-align: center;
+    };
+    @include xs{
+      margin-bottom: 10px;
+    };
+  }
+
+  &__text {
+    color: $bg;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.71;
+    margin-bottom: 30px;
+    @include md {
+      text-align: center;
+    };
+    @include xs{
+      margin-bottom: 10px;
+    };
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    @include md{
+      justify-content: center;
+    };
+  }
+  &__price {
+    margin-right: 25px;
+  }
+}
+
+.price {
+  color: $orange2;
+  font-family: Gagalin;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+
+  &__int {
+    font-size: 72px;
+    margin-right: 5px;
+    @include sm{
+      font-size: 50px;
+    };
+  }
+  &__cur {
+    font-size: 30px;
+  }
+}
+
+.composition {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+
+  &:hover {
+    .composition__button {
+      background-color: rgba($orange2,1);
+    }
+    .composition__drop {
+      display: flex;
+    }
+  }
+
+  &__button {
+    width: 90px;
+    height: 90px;
+    background-color: rgba($orange2,.4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: .3s;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      width: 20px;
+      height: 100%;
+    }
+
+
+  }
+  &__svg {
+    width: 46px;
+    height: 44px;
+    margin-bottom: 5px;
+  }
+  &__title {
+    color: $bg;
+    font-family: Gagalin;
+    font-size: 14px;
+  }
+
+  &__drop {
+    display: none;
+    width: 270px;
+    background-color: rgba($bg,.9);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 90px;
+    padding: 15px 20px;
+    @include xs{
+      width: 215px;
+      padding: 10px 15px;
+    };
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-img {
+      margin-right: 25px;
+      @include xs{
+        margin-right: 10px;
+      };
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+  }
+  &__weight {
+    font-size: 14px;
+    margin-left: auto;
+  }
+}
+
+.kkal {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  opacity: 0.5;
+  color: $bg;
+  font-family: Gagalin;
+  font-size: 20px;
+  @include md{
+    bottom: initial;
+    left: initial;
+    right: 0;
+    top: 0;
+  };
+
+  &__svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 24px;
+    left: 13px;
+  }
+  &__title {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
