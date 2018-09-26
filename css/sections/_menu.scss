@@ -26,12 +26,22 @@
     &.active {
       .haccor__wrapper {
         width: 541px;
+        @include md{
+          width: 518px;
+        };
+        @include sm{
+          width: 340px;
+        };
+        @include xs{
+          width: 200px;
+        };
       }
     }
   }
 
   &__wrapper {
     width: 0;
+    height: 100%;
     overflow: hidden;
     transition: .5s;
     background-color: rgba($text, .93);
@@ -42,6 +52,17 @@
     color: $bg;
     font-size: rem(14px);
     line-height: 1.71;
+    @include md{
+      padding: 30px 20px;
+      width: 518px;
+    };
+    @include sm{
+      width: 340px;
+    };
+    @include xs{
+      width: 200px;
+      padding: 10px;
+    };
 
   }
 
@@ -55,6 +76,10 @@
     align-items: flex-end;
     position: relative;
     cursor: pointer;
+    @include sm{
+      width: 40px;
+      font-size: rem(24px);
+    };
 
     &:after {
       content: '';
@@ -81,6 +106,10 @@
       z-index: 20;
       bottom: -40px;
       left: 0;
+      @include sm{
+        line-height: 40px;
+        bottom: 0;
+      };
     }
   }
 }
