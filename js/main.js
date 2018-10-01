@@ -60,7 +60,6 @@ $(function () {
     hamOpen.addEventListener('click', function (e) {
         ham.classList.add('open');
     });
-
     hamClose.addEventListener('click', function (e) {
         ham.classList.remove('open');
     });
@@ -74,7 +73,6 @@ $(function () {
     })
 
     const orderForm = document.querySelector('.order__form');
-
     orderForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -96,6 +94,33 @@ $(function () {
             }
         })
     });
+
+
+    const reviewButtons = document.querySelectorAll('.review__button');
+    const popup = document.querySelector('.popup');
+    const popupContent = popup.querySelector('.popup__content');
+
+    for (let i=0; i<reviewButtons.length; i++) {
+       let reviewButton = reviewButtons[i];
+
+        reviewButton.addEventListener('click', function () {
+            let content = this.previousElementSibling.innerHTML;
+
+            popupContent.innerHTML = content;
+            popup.classList.add('active');
+        });
+    }
+    popup.querySelector('.popup__close').addEventListener('click', function () {
+        popup.classList.remove('active');
+    });
+    popup.addEventListener('click', function (e) {
+
+        if (e.target.classList.contains('popup')) {
+            popup.classList.remove('active');
+        }
+    });
+
+
 
 
 });
