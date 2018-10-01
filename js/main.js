@@ -63,5 +63,38 @@ $(function () {
 
     hamClose.addEventListener('click', function (e) {
         ham.classList.remove('open');
+    });
+
+    var mySwiper = new Swiper('.burgers__container', {
+        loop: true,
+        navigation: {
+            nextEl: '.burgers__next',
+            prevEl: '.burgers__prev',
+        },
     })
+
+    const orderForm = document.querySelector('.order__form');
+    const orderSubmit = document.querySelector('.order__submit');
+
+    orderSubmit.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+        const xhr = new XMLHttpRequest();
+        const data = {
+            name:'Name',
+            phone: '12342134',
+            comment: 'sdjfhakjsdfhkj',
+            to: 'email@email'
+        };
+
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.responseType = 'json';
+        xhr.send(JSON.stringify(data));
+        xhr.addEventListener('load', function () {
+            console.log(xhr);
+        })
+    });
+
+
 });
