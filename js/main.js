@@ -74,25 +74,26 @@ $(function () {
     })
 
     const orderForm = document.querySelector('.order__form');
-    const orderSubmit = document.querySelector('.order__submit');
 
-    orderSubmit.addEventListener('click', function (e) {
-
+    orderForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const xhr = new XMLHttpRequest();
-        const data = {
-            name:'Name',
-            phone: '12342134',
-            comment: 'sdjfhakjsdfhkj',
-            to: 'email@email'
-        };
+        let els = this.elements,
+            data = {
+                name: els.name.value,
+                phone: els.tel.value,
+                comment: els.comment.value,
+                to: 'email@email'
+            };
 
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.responseType = 'json';
         xhr.send(JSON.stringify(data));
         xhr.addEventListener('load', function () {
-            console.log(xhr);
+            if (xhr.status < 400) {
+                alert('Спасибо за заказ!!!');
+            }
         })
     });
 
