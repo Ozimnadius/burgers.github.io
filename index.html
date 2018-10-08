@@ -41,7 +41,7 @@
                     <a href="#best" class="nav__item">
                         О нас
                     </a>
-                    <a href="" class="nav__item">
+                    <a href="#burgers" class="nav__item">
                         Бургеры
                     </a>
                     <a href="#team" class="nav__item">
@@ -56,7 +56,7 @@
                     <a href="" class="nav__item">
                         как мы работаем
                     </a>
-                    <a href="" class="nav__item">
+                    <a href="#map" class="nav__item">
                         Контакты
                     </a>
 
@@ -81,12 +81,12 @@
                 <div class="pagination">
                     <a href="#greet" class="pagination__item active"></a>
                     <a href="#best" class="pagination__item"></a>
-                    <a href="" class="pagination__item"></a>
+                    <a href="#burgers" class="pagination__item"></a>
                     <a href="#team" class="pagination__item"></a>
                     <a href="#menu" class="pagination__item"></a>
                     <a href="#reviews" class="pagination__item"></a>
-                    <a href="" class="pagination__item"></a>
-                    <a href="" class="pagination__item"></a>
+                    <a href="#order" class="pagination__item"></a>
+                    <a href="#map" class="pagination__item"></a>
                     <a href="" class="pagination__item"></a>
                 </div>
                 <!-- END pagination -->
@@ -103,7 +103,7 @@
         <main class="main">
 
             <!-- greet -->
-            <section id="greet" class="section greet">
+            <section id="greet" class="section greet active">
                 <div class="container">
                     <div class="row">
 
@@ -828,8 +828,54 @@
             <!-- END order -->
 
             <!-- map -->
-            <section class="map">
+            <section class="map" id="map">
 
+                <!-- footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="footer__contacts">
+                                <a target="_blank" href="#" class="addr">
+                                    Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+                                </a>
+                                <a href="tel:+7 (812) 377-13-77" class="phone">
+                                    <svg class="phone__svg">
+                                        <use xlink:href="images/icons/sprite.svg#tel"></use>
+                                    </svg>
+                                    <span class="phone__text">+7 (812) 377-13-77</span>
+                                </a>
+                            </div>
+
+                            <div class="footer__socials">
+                                <div class="socials">
+                                    <a target="_blank" href="" class="social">
+                                        <svg class="social__svg">
+                                            <use xlink:href="images/icons/sprite.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                    <a target="_blank" href="" class="social">
+                                        <svg class="social__svg">
+                                            <use xlink:href="images/icons/sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                    <a target="_blank" href="" class="social">
+                                        <svg class="social__svg">
+                                            <use xlink:href="images/icons/sprite.svg#inst"></use>
+                                        </svg>
+                                    </a>
+                                    <a target="_blank" href="" class="social">
+                                        <svg class="social__svg">
+                                            <use xlink:href="images/icons/sprite.svg#tw"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- END footer -->
             </section>
             <!-- END map -->
 
@@ -837,53 +883,6 @@
 
     </div>
     <!-- END page -->
-
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-
-                <div class="footer__contacts">
-                    <a target="_blank" href="#" class="addr">
-                        Санкт-Петербург, ул.Бабушкина, д.12/1, 15
-                    </a>
-                    <a href="tel:+7 (812) 377-13-77" class="phone">
-                        <svg class="phone__svg">
-                            <use xlink:href="images/icons/sprite.svg#tel"></use>
-                        </svg>
-                        <span class="phone__text">+7 (812) 377-13-77</span>
-                    </a>
-                </div>
-
-                <div class="footer__socials">
-                    <div class="socials">
-                        <a target="_blank" href="" class="social">
-                            <svg class="social__svg">
-                                <use xlink:href="images/icons/sprite.svg#vk"></use>
-                            </svg>
-                        </a>
-                        <a target="_blank" href="" class="social">
-                            <svg class="social__svg">
-                                <use xlink:href="images/icons/sprite.svg#fb"></use>
-                            </svg>
-                        </a>
-                        <a target="_blank" href="" class="social">
-                            <svg class="social__svg">
-                                <use xlink:href="images/icons/sprite.svg#inst"></use>
-                            </svg>
-                        </a>
-                        <a target="_blank" href="" class="social">
-                            <svg class="social__svg">
-                                <use xlink:href="images/icons/sprite.svg#tw"></use>
-                            </svg>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- END footer -->
 </div>
 
 <div class="debug">
@@ -943,7 +942,7 @@
         <a href="#best" class="ham__item">
             О нас
         </a>
-        <a href="" class="ham__item">
+        <a href="#burgers" class="ham__item">
             Бургеры
         </a>
         <a href="#team" class="ham__item">
@@ -955,10 +954,10 @@
         <a href="#reviews" class="ham__item">
             Отзывы
         </a>
-        <a href="" class="ham__item">
+        <a href="#order" class="ham__item">
             как мы работаем
         </a>
-        <a href="" class="ham__item">
+        <a href="#map" class="ham__item">
             Контакты
         </a>
     </div>
@@ -991,6 +990,9 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
 <script src="js/swiper.js"></script>
 <script src="js/main.js"></script>
 </body>

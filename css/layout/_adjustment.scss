@@ -28,7 +28,7 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -37,6 +37,12 @@ body {
 
 .page {
   flex-grow: 1;
+  height: 100%;
+}
+
+.main {
+  transition: .5s;
+  height: 100%;
 }
 
 .container {
@@ -53,10 +59,11 @@ body {
   };
 }
 
-section {
-  height: 100vh;
 
+section {
+  height: 100%;
   background-size: cover;
+  overflow: hidden;
 
   .container {
     height: 100%;

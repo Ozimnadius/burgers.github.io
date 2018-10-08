@@ -520,7 +520,7 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -536,6 +536,14 @@ body {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  height: 100%;
+}
+
+.main {
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  height: 100%;
 }
 
 .container {
@@ -558,8 +566,9 @@ body {
 }
 
 section {
-  height: 100vh;
+  height: 100%;
   background-size: cover;
+  overflow: hidden;
 }
 
 section .container {
@@ -2436,8 +2445,7 @@ button.swiper-pagination-bullet {
 
 /*-----------------SECTION-MAP--------------------*/
 .map {
-  background: url("../images/bg/map.jpg") center center no-repeat;
-  background-size: cover;
+  position: relative;
 }
 
 /*-----------------SECTION-HAMBURGER--------------------*/
@@ -3005,6 +3013,11 @@ button.swiper-pagination-bullet {
 
 /*------------------------SECTION-FOOTER---------------------*/
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   background: url("../images/bg/bg-footer.jpg") center center no-repeat;
   background-size: cover;
   padding: 10px 0;

@@ -100,8 +100,8 @@ $(function () {
     const popup = document.querySelector('.popup');
     const popupContent = popup.querySelector('.popup__content');
 
-    for (let i=0; i<reviewButtons.length; i++) {
-       let reviewButton = reviewButtons[i];
+    for (let i = 0; i < reviewButtons.length; i++) {
+        let reviewButton = reviewButtons[i];
 
         reviewButton.addEventListener('click', function () {
             let content = this.previousElementSibling.innerHTML;
@@ -121,6 +121,183 @@ $(function () {
     });
 
 
+    let sections = $('section'),
+        mainContent = $('.main'),
+        inScroll = false,
+        screen = 0;
 
+    const mobileDetect = new MobileDetect(window.navigator.userAgent);
+    const isMobile = mobileDetect.mobile();
+
+
+    function scrollToSection(sectionIndex) {
+        let position = '0vh';
+
+        position = ((sections.eq(sectionIndex).index()) * -100) + '%';
+
+        sections.eq(sectionIndex).addClass('active')
+            .siblings()
+            .removeClass('active');
+
+        mainContent.css({
+            'transform': 'translate3d(0,' + position + ', 0)'
+        });
+        $('.pagination__item').eq(sectionIndex).addClass('active')
+            .siblings()
+            .removeClass('active');
+
+        setTimeout(function () {
+            inScroll = false;
+        }, 500);
+    }
+
+    $(document).on({
+            wheel: function (e) {
+                e.preventDefault();
+
+                let deltaY = e.originalEvent.deltaY,
+                    activeSection = sections.filter('.active'),
+                    nextSection = activeSection.next(),
+                    prevSection = activeSection.prev();
+
+                if (inScroll) return;
+
+                inScroll = true;
+
+                if (deltaY > 0) {
+                    if (nextSection.length) {
+                        scrollToSection(nextSection.index());
+                    } else {
+                        inScroll = false;
+                    }
+                } else {
+                    if (prevSection.length) {
+                        scrollToSection(prevSection.index());
+                    } else {
+                        inScroll = false;
+                    }
+                }
+            },
+            keydown: function (e) {
+                let activeSection = sections.filter('.active'),
+                    nextSection = activeSection.next(),
+                    prevSection = activeSection.prev();
+
+                if ($(e.target).is('textarea')) return;
+
+                // if (!(e.keyCode === 38 || e.keyCode === 40)) return;
+
+                if (e.keyCode == '38') {
+                    if (prevSection.length) {
+                        screen = prevSection.index();
+                    }
+                } else if (e.keyCode == '40') {
+                    if (nextSection.length) {
+                        screen = nextSection.index();
+                    }
+                }
+
+
+                scrollToSection(screen);
+
+            }
+        }
+    );
+
+    $('.wrapper').on('touchmove', function (e) {
+        e.preventDefault();
+    });
+
+
+    $('.pagination__item, .nav__item, .logo, .header__button').on('click', function (e) {
+        e.preventDefault();
+        let href = $(this).attr('href'),
+            target = sections.filter(href);
+
+        inScroll = true;
+
+        scrollToSection(target.index());
+    });
+
+    $('.ham__item, .logo').on('click', function (e) {
+        e.preventDefault();
+        let href = $(this).attr('href'),
+            target = sections.filter(href);
+
+        inScroll = true;
+        $('.ham').removeClass('open');
+        scrollToSection(target.index());
+    });
+
+
+    if (isMobile) {
+        $(document).swipe({
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                /**
+                 * плагин возвращает фактическое...
+                 * ...
+                 */
+                const scrollDirection = direction === 'down' ? 'up' : 'down';
+
+                let activeSection = sections.filter('.active'),
+                    nextSection = activeSection.next(),
+                    prevSection = activeSection.prev();
+
+
+                if (scrollDirection == 'down') {
+                    if (nextSection.length) {
+                        scrollToSection(nextSection.index());
+                    } else {
+                        inScroll = false;
+                    }
+                } else {
+                    if (prevSection.length) {
+                        scrollToSection(prevSection.index());
+                    } else {
+                        inScroll = false;
+                    }
+                }
+            }
+        });
+    }
 
 });
+
+//yandex-map
+(function () {
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init() {
+        myMap = new ymaps.Map("map", {
+            center: [55.65587627, 37.54100446],
+            zoom: 14,
+            controls: []
+        });
+
+        myMap.behaviors.disable(['scrollZoom']);
+        // myMap.controls.remove('geolocationControl')
+        //     .remove('searchControl')
+        //     .remove('trafficControl')
+        //     .remove('typeSelector')
+        //     .remove('fullscreenControl')
+        //     .remove('zoomControl')
+        //     .remove('rulerControl');
+
+        myPin = new ymaps.GeoObjectCollection({}, {
+            iconLayout: 'default#image',
+            iconImageHref: '/images/icons/map-marker.svg',
+            iconImageSize: [46, 57],
+            iconImageOffset: [-15, -55]
+        });
+
+        myPlacemark1 = new ymaps.Placemark([55.65587627, 37.54100446], {});
+        myPlacemark2 = new ymaps.Placemark([55.64158266, 37.52660636], {});
+        myPlacemark3 = new ymaps.Placemark([55.65672547, 37.57243995], {});
+        myPlacemark4 = new ymaps.Placemark([55.66958253, 37.55184058], {});
+
+        myPin.add(myPlacemark1).add(myPlacemark2).add(myPlacemark3).add(myPlacemark4);
+        myMap.geoObjects.add(myPin);
+    }
+}());
