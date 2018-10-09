@@ -2,6 +2,7 @@
 $break_md: 992px;
 $break_sm: 768px;
 $break_xs: 480px;
+$break_xxs: 380px;
 
 //fonts
 $font: 'Ubuntu', Arial, sans-serif;
@@ -66,5 +67,7 @@ $font-size: 14px;
 @import "sections/_burgers";
 /*-----------------SECTION-POPUP--------------------*/
 @import "sections/_popup";
+/*-----------------SECTION-VIDEO--------------------*/
+@import "sections/_video";
 /*------------------------SECTION-FOOTER---------------------*/
 @import "sections/_footer";

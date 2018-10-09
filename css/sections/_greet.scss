@@ -34,6 +34,9 @@
   }
   &__pic {
     width: 417px;
+    @include xxs {
+      width: 250px;
+    };
   }
 
   &__content {
@@ -60,5 +63,8 @@
       width: 29px;
       height: 14px;
     }
+    @include xxs {
+      bottom: 10px;
+    };
   }
 }

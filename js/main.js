@@ -201,8 +201,7 @@ $(function () {
                 scrollToSection(screen);
 
             }
-        }
-    );
+        });
 
     $('.wrapper').on('touchmove', function (e) {
         e.preventDefault();
@@ -227,6 +226,90 @@ $(function () {
         inScroll = true;
         $('.ham').removeClass('open');
         scrollToSection(target.index());
+    });
+
+    const video = document.querySelector('.video__video');
+    const pin = $('.video__scale-pin');
+    const pinVolume = $('.video__volume-pin');
+    const start = $('.video__start');
+    const play = $('.video__play');
+
+    function startVideo(){
+        video.play();
+        start.hide();
+        play.addClass('pause');
+    };
+    function pauseVideo() {
+        video.pause();
+        start.show();
+        play.removeClass('pause');
+    };
+    $('.video__start, .video__play-svg_play').on('click', function (e) {
+        startVideo()
+    });
+    $('.video__play-svg_pause').on('click', function (e) {
+        pauseVideo();
+    });
+    function setDurationPin(percent){
+        pin.css({
+            left: percent
+        });
+    }
+    $('.video__scale').on('click', function (e) {
+        e.preventDefault();
+
+        let bar = $(e.currentTarget),
+            newPosition = e.pageX - bar.offset().left,
+            percent = newPosition / bar.width() * 100 + '%';
+
+        video.currentTime = video.duration*(newPosition / bar.width());
+
+        setDurationPin(percent);
+    });
+    video.ontimeupdate = function () {
+        let duration = video.duration,
+            currentTime = video.currentTime,
+            percent = currentTime / duration * 100 + '%';
+
+        setDurationPin(percent);
+    };
+    $('.video__volume-pin').css({
+        left: video.volume*100+'%'
+    });
+
+
+    const volume = $('.video__volume');
+    function mute(){
+        volume.addClass('muted');
+        video.volume = 0;
+        pinVolume.css({
+            left: 0
+        });
+    }
+    function unmute(percent) {
+        volume.removeClass('muted');
+        video.volume = 1;
+        pinVolume.css({
+            left: percent
+        });
+    }
+    $('.video__volume-scale').on('click', function (e) {
+        e.preventDefault();
+
+        let bar = $(e.currentTarget),
+            newPosition = e.pageX - bar.offset().left,
+            percent = newPosition / bar.width() * 100 + '%';
+
+        video.volume = newPosition / bar.width();
+
+        unmute(percent);
+    });
+
+    $('.video__volume-svg_mute').on('click',function () {
+        unmute('100%');
+    });
+    $('.video__volume-svg_unmute').on('click',function () {
+        mute();
     });
 
 

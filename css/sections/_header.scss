@@ -5,6 +5,9 @@
   left: 0;
   right: 0;
   padding: 12px 0;
+  @include xxs{
+    padding: 0;
+  };
 
   .container {
     position: relative;

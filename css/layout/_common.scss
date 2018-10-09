@@ -36,6 +36,10 @@
   &__svg {
     width: 92px;
     height: 69px;
+    @include xxs{
+
+      height: 40px;
+    };
   }
 }
 
@@ -147,6 +151,9 @@
   @include xs{
     font-size: rem(60px);
   };
+  @include xxs {
+    font-size: rem(42px);
+  };
 }
 .subtitle {
   color: $bg;
@@ -157,6 +164,10 @@
   line-height: 60px;
   @include xs{
     font-size: rem(45px);
+  };
+  @include xxs{
+    font-size: rem(32px);
+    line-height: 1;
   };
 }
 
